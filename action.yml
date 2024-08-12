@@ -9,13 +9,16 @@ inputs:
   title:
     description: "The name of the release to publish"
     required: true
+  tag:
+    description: "The tag to publish"
+    required: false
   workdir:
     description: "Directory of the repository that the should create the release"
     required: false
 
 runs:
   using: 'composite'
-  steps:      
+  steps:
     - run: $GITHUB_ACTION_PATH/entrypoint.sh
       shell: bash
       env:
